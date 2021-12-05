@@ -22,7 +22,7 @@ TABLE OF CONTENTS
 
   * [INTRODUCTION](#INTRODUCTION)
   * [HARDWARE REQUIREMENTS](#HARDWARE-REQUIREMENTS)
-  * [KNOWN ISSUES](#KNOWN-ISSUES)
+  * [TROUBLESHOOTING AND KNOWN ISSUES](#TROUBLESHOOTING-AND-KNOWN-ISSUES)
   * [CREDITS](#CREDITS)
   * [DONATIONS](#DONATIONS)
   * [APPENDIX 1](#APPENDIX-1)
@@ -57,16 +57,17 @@ The best option is a DAC that supports all standard sampling rates in the range 
 
 [Brutefir](https://torger.se/anders/brutefir.html) only works with [PCM](https://en.wikipedia.org/wiki/Pulse-code_modulation) formats and Minosse automatically configures [Volumio 3](https://volumio.org/) to convert [DSD](https://en.wikipedia.org/wiki/Direct_Stream_Digital) streams to [PCM](https://en.wikipedia.org/wiki/Pulse-code_modulation) audio, even though your DAC does support [DSD](https://en.wikipedia.org/wiki/Direct_Stream_Digital).
 
-KNOWN ISSUES
-------------
+TROUBLESHOOTING AND KNOWN ISSUES
+--------------------------------
 
-- If Minosse seems unresponsive to new configurations and commands, it is likely that [Brutefir](https://torger.se/anders/brutefir.html) needs to be reloaded. This happens for example when you add new coefficient files to the filter folders. Their coefficient ID will appear as an option in Minosse configuration panel, but the new coefficients will be inaccessible to [Brutefir](https://torger.se/anders/brutefir.html) until it is reloaded. To reload [Brutefir](https://torger.se/anders/brutefir.html), simply press stop and play again. As a rule of thumb, while messages from Minosse are shown on the screen don't do anything until they disappear.
-- Minosse responsiveness is fair enough, but don't expect it to be blazing fast, even though you are using the latest cutting-edge hardware. The trade-off for [FIR](https://en.wikipedia.org/wiki/Finite_impulse_response) filtering and automatic configuration is a certain amount of latency time.
-- At the moment, only English and Italian translations are available.
+- **Stuttering sound:** This is very rare and may happen because audio sources are slow (for example when you stream audio from a remote server). In general, it's enough to press stop and then play again. Should it persist, check your network and/or streaming service throughput.
+- **Unresponsive to commands:** if Minosse seems unresponsive to new configurations and commands, it is likely that [Brutefir](https://torger.se/anders/brutefir.html) needs to be reloaded. This happens for example when you add new coefficient files to the filter folders. Their coefficient ID will appear as an option in Minosse configuration panel, but the new coefficients will be inaccessible to [Brutefir](https://torger.se/anders/brutefir.html) until it is reloaded. To reload [Brutefir](https://torger.se/anders/brutefir.html), simply press stop and then play again.
+- **Latency time:** Minosse responsiveness is fair enough, but don't expect it to be blazing fast, even though you are using the latest cutting-edge hardware. The price to pay for [FIR](https://en.wikipedia.org/wiki/Finite_impulse_response) filtering and automatic configuration is a certain amount of latency time. The user is always informed of what is going on through [Volumio](https://volumio.org/) standard messages. As a rule of thumb, while messages from Minosse are shown on the screen don't do anything until they disappear.
+- **Languages:** At the moment, only English and Italian translations are available.
 
 
-Sorry, still work in progress...
-================================
+To be continued...
+==================
 
 
 CREDITS
@@ -137,5 +138,5 @@ Minosse output configurations for standard Surround audio cards
 
 ![Multi channel table](https://github.com/KarlitoswayXYZ/minosse-user-manual/blob/master/img/multichannel_table.png "Multi channel table")
 
-For more info about jack colors and their function, visit [this site](https://www.phase4.org/pdfs/The%20Ins%20and%20Outs%20of%20PC%20Audio%20Jack%20Colors.pdf). Please, note that all "Sub" outputs work in mono, as they have both left and right channels as input.
+Please, note that although Minosse can exploit multi channel output from Surround cards, it does not support any Surround format and only works with stereo PCM audio sources. For more info about jack colors and their function, visit [this site](https://www.phase4.org/pdfs/The%20Ins%20and%20Outs%20of%20PC%20Audio%20Jack%20Colors.pdf). All "Sub" outputs work in mono, as they have both left and right channels as input.
 
