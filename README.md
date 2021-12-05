@@ -24,6 +24,7 @@ TABLE OF CONTENTS
   * [HARDWARE REQUIREMENTS](#HARDWARE-REQUIREMENTS)
   * [KNOWN ISSUES](#KNOWN-ISSUES)
   * [CREDITS](#CREDITS)
+  * [DONATIONS](#DONATIONS)
   * [APPENDIX 1](#APPENDIX-1)
   * [APPENDIX 2](#APPENDIX-2)
 
@@ -54,12 +55,12 @@ HARDWARE REQUIREMENTS
 
 The best option is a DAC that supports all standard sampling rates in the range from 44100 to 192000 Hz, so that the resampler is never activated. Minosse has been limited to 192kHz to avoid excessive straining on the CPU. Hence, DAC support for higher sampling rates is irrelevant. Bit depth should be 32 bit, so that the dynamic range reduction due to the volume control is well compensated. For this reason, as a minimum requirement your DAC should support 24 bit audio at the very least. In case of DACs only supporting 16 bit format, dither is applied automatically.
 
-[Brutefir](https://torger.se/anders/brutefir.html) only works with [PCM](https://en.wikipedia.org/wiki/Pulse-code_modulation) formats and Minosse automatically configures [Volumio](https://volumio.org/) to convert [DSD](https://en.wikipedia.org/wiki/Direct_Stream_Digital) streams to [PCM](https://en.wikipedia.org/wiki/Pulse-code_modulation) audio, even though your DAC does support [DSD](https://en.wikipedia.org/wiki/Direct_Stream_Digital).
+[Brutefir](https://torger.se/anders/brutefir.html) only works with [PCM](https://en.wikipedia.org/wiki/Pulse-code_modulation) formats and Minosse automatically configures [Volumio 3](https://volumio.org/) to convert [DSD](https://en.wikipedia.org/wiki/Direct_Stream_Digital) streams to [PCM](https://en.wikipedia.org/wiki/Pulse-code_modulation) audio, even though your DAC does support [DSD](https://en.wikipedia.org/wiki/Direct_Stream_Digital).
 
 KNOWN ISSUES
 ------------
 
-- If Minosse seems unresponsive to new configurations and commands, it is likely that [Brutefir](https://torger.se/anders/brutefir.html) needs to be reloaded. This happens for example when you add new coefficient files to the filter folders. Their coefficient ID will appear as an option in Minosse configuration panel, but the new coefficients will be inaccessible to [Brutefir](https://torger.se/anders/brutefir.html) until it is reloaded. To reload [Brutefir](https://torger.se/anders/brutefir.html), simply press stop and play again. As a rule of thumb, while messages from Minosse are shown don't do anything until they disappear.
+- If Minosse seems unresponsive to new configurations and commands, it is likely that [Brutefir](https://torger.se/anders/brutefir.html) needs to be reloaded. This happens for example when you add new coefficient files to the filter folders. Their coefficient ID will appear as an option in Minosse configuration panel, but the new coefficients will be inaccessible to [Brutefir](https://torger.se/anders/brutefir.html) until it is reloaded. To reload [Brutefir](https://torger.se/anders/brutefir.html), simply press stop and play again. As a rule of thumb, while messages from Minosse are shown on the screen don't do anything until they disappear.
 - Minosse responsiveness is fair enough, but don't expect it to be blazing fast, even though you are using the latest cutting-edge hardware. The trade-off for [FIR](https://en.wikipedia.org/wiki/Finite_impulse_response) filtering and automatic configuration is a certain amount of latency time.
 - At the moment, only English and Italian translations are available.
 
@@ -76,6 +77,17 @@ CREDITS
 - At the heart of Minosse is [Brutefir](https://torger.se/anders/brutefir.html), a very fast convolution engine by [Anders Torger](https://torger.se/anders/)
 
 - [Rephase](https://rephase.org/) is a [Finite Impulse Response](https://en.wikipedia.org/wiki/Finite_impulse_response) (FIR) generation tool by Thomas Drugeon (runs on Windows only)
+
+DONATIONS
+---------
+
+If you appreciate my work, please make a donation to support the development of Minosse DSP plugin. Thanks.
+
+To donate, click or scan the QR code:
+
+<a href="https://www.paypal.com/donate/?hosted_button_id=3X4ESPGKFDATU">
+  <img src="https://github.com/KarlitoswayXYZ/minosse-user-manual/blob/master/img/QR_Code.png" width="130" height="130"/>
+</a>
 
 APPENDIX 1
 ----------
