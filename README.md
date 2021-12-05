@@ -35,8 +35,8 @@ INTRODUCTION
 
 Minosse DSP is a Digital Signal Processor plugin for [Volumio 3](https://volumio.org/) based on [Brutefir](https://torger.se/anders/brutefir.html), a popular Open Source convolution engine by Anders Torger. The priority of Minosse DSP is to deliver the best possible sound quality along with a pleasant user experience. Generally speaking, the computer audio industry is more oriented towards versatility rather than audio quality. In the digital world, often happens that the audio signal path becomes a jungle of unidentified elaborations which unique purpose is to deliver audio output at all costs. In this context the advantages of digital signal processing might be lost along the way because of inadequate, misconfigured or poorly implemented algorithms that the user is completely unaware of.
 
-Minosse DSP is intended to be a rock solid, no-frills, easy-to-use Digital Signal Processor. It provides a 10 band graphic equalizer and [Digital Room Correction](https://www.drc.one/), along with multi channel options for building digital x-overs. Integration with [Volumio 3](https://volumio.org/) is profound: volume cursor and resampler configurations are overridden to become part of Minosse itself. The advantages are:
-- audio signal path is minimal, as a single elaboration (the convolution engine) performs several tasks
+Minosse DSP is intended to be a rock solid, no-frills, audiophile-grade, easy-to-use Digital Signal Processor. It provides a 10 band graphic equalizer and [Digital Room Correction](https://www.drc.one/), along with multi channel options for building digital x-overs. Integration with [Volumio 3](https://volumio.org/) is profound: volume cursor and resampler configurations are overridden to become part of Minosse itself. The advantages are:
+- audio signal path is minimal, as a single elaboration (the convolution engine) performs several tasks with the maximum resolution (64 bit float) available today for digital audio
 - attenuation is implicit; no need to configure filters' attenuation separately to avoid saturation (unless you use to play music at maximum volume!)
 - volume control for multi channel mode (up to 8 channels, the standard 5.1 and 7.1 Surround cards are well supported; see [APPENDIX 2](#APPENDIX-2)) is solved at the root and you don't need to buy or configure any other dedicated tool
 - resampling is only used in two cases:
@@ -45,7 +45,7 @@ Minosse DSP is intended to be a rock solid, no-frills, easy-to-use Digital Signa
 - all the above is done automatically, so that the steps to achieve the best audio quality are made depending on the underlying hardware and are completely transparent to the user
 
 HARDWARE REQUIREMENTS
-----------------------
+---------------------
 
 **CPU and mother board:**
 
@@ -60,10 +60,12 @@ The best option is a DAC that supports all standard sampling rates in the range 
 TROUBLESHOOTING AND KNOWN ISSUES
 --------------------------------
 
-- **Stuttering sound:** This is very rare and may happen because audio sources are slow (for example when you stream audio from a remote server). In general, it's enough to press stop and then play again. Should it persist, check your network and/or streaming service throughput.
+- **I want to use an external volume control:** Using Minosse configuration panel, you can set the initial volume level to a fixed value, but avoid setting it to the maximum. A certain amount of attenuation is always required to avoid filters' saturation, and the right amount depens on filters' settings. Roughly, it ranges from -6dB to -20dB.
 - **Unresponsive to commands:** if Minosse seems unresponsive to new configurations and commands, it is likely that [Brutefir](https://torger.se/anders/brutefir.html) needs to be reloaded. This happens for example when you add new coefficient files to the filter folders. Their coefficient ID will appear as an option in Minosse configuration panel, but the new coefficients will be inaccessible to [Brutefir](https://torger.se/anders/brutefir.html) until it is reloaded. To reload [Brutefir](https://torger.se/anders/brutefir.html), simply press stop and then play again.
 - **Latency time:** Minosse responsiveness is fair enough, but don't expect it to be blazing fast, even though you are using the latest cutting-edge hardware. The price to pay for [FIR](https://en.wikipedia.org/wiki/Finite_impulse_response) filtering and automatic configuration is a certain amount of latency time. The user is always informed of what is going on through [Volumio](https://volumio.org/) standard messages. As a rule of thumb, while messages from Minosse are shown on the screen don't do anything until they disappear.
 - **Languages:** At the moment, only English and Italian translations are available.
+- **Hums, hisses, bumps and other noises:** Minosse is devised to concentrate all signal elaborations (included volume control) within a single process, that is the convolution engine. This means that there will be no further attenuation downstram, and whatever noise is generated from DAC on it will be delivered to the loudspeakers/headphones unattenuated. This is not an issue if the whole HI-FI gear is properly assembled and wired. However, to my experience, it is enough to keep the HDMI cable plugged in along with the audio output wire to create a ground loop with unpleasant audible results. The same is valid for the bumps caused by turning on and off your devices. To avoid all this, eliminate ground loops and find the right sequence for turning on and off your gear.
+- **Stuttering sound:** This is very rare and may happen because audio sources are slow (for example when you stream audio from a remote server). In general, it's enough to press stop and then play again. Should it persist, check your network and/or streaming service throughput.
 
 
 To be continued...
